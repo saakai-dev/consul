@@ -1,11 +1,9 @@
-module Abilities
-  class SDG::Manager
-    include CanCan::Ability
+class Abilities::SDG::Manager
+  include CanCan::Ability
 
-    def initialize(user)
-      merge Abilities::Common.new(user)
+  def initialize(user)
+    merge Abilities::Common.new(user)
 
-      can :read, ::SDG::Target
-    end
+    can :read, ::SDG::Target
   end
 end
